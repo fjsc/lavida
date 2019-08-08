@@ -1,0 +1,68 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>La vida...</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		h1 {
+			color: red;
+			font-size: 44px;
+		}
+	</style>
+</head>
+<body>
+<h1>La vida generator</h1>
+
+<div id="lavidaform">
+	<div>
+		<label for="comoeslavida">¿Cómo es la vida?</label>
+		<input type="text" id="comoeslavida"/>
+	</div>
+	<br>
+	<div>
+		<label for="quetehacelavida">¿Qué te hace la vida?</label>
+		<input type="text" id="quetehacelavida"/>
+	</div>
+	<br><br>
+    <button onclick="generateVida()">Give me a vida</button>
+</div>
+
+<div id="lavidacontainer" style="display: none">
+	<div id="lavida">
+	</div>
+	<br>
+    <button onclick="otraVida()">No me convence esta vida</button>
+</div>
+	
+</div>
+
+
+
+<script>
+
+	function generateVida() {
+	
+		const comoeslavida = document.getElementById("comoeslavida").value;
+		const quetehacelavida = document.getElementById("quetehacelavida").value;
+	
+		const vidaBase = `
+			Y es que a veces la vida es ${comoeslavida}
+			Cuando crees que tienes algo
+			Llega y ${quetehacelavida}
+			No sé si entendéis de lo que hablo
+		`;
+		
+		document.getElementById("lavida").innerText = vidaBase;
+	    document.getElementById("lavidacontainer").style.display = "block";
+		document.getElementById("lavidaform").style.display = "none";
+	}
+	
+	
+	function otraVida() {
+	  alert("!!inyourface");
+	  document.getElementById("lavidacontainer").style.display = "none";
+	  document.getElementById("lavidaform").style.display = "block";
+	}
+</script>
+</body>
+</html>
